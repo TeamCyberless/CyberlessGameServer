@@ -40,7 +40,8 @@ docker run \
   -p 27015:27015/tcp \
   -it teamcyberless/cyberless3onlineserver:latest \
   ./CyberlessIIIOnline/Binaries/Linux/CyberlessIIIOnlineServer-Linux-Shipping \
-  /Game/Maps/Training?ServerPassword=passwd?TimeLimit=20?GoalScore=330 -server -log -Messaging
+  /Game/Maps/Training?ServerPassword=passwd?TimeLimit=20?GoalScore=330 \
+  -server -log -Messaging -SteamServerName="My Server"
 ```
 
 ### Run with volume (You must first create a volume)
@@ -68,7 +69,8 @@ docker run \
   --mount source=<volume name>,target=/opt/CyberlessIIIOnlineServer \
   teamcyberless/cyberless3onlineserver:latest \
   ./CyberlessIIIOnline/Binaries/Linux/CyberlessIIIOnlineServer-Linux-Shipping \
-  /Game/Maps/Training?ServerPassword=passwd?TimeLimit=20?GoalScore=330 -server -log -Messaging
+  /Game/Maps/Training?ServerPassword=passwd?TimeLimit=20?GoalScore=330 \
+  -server -log -Messaging -SteamServerName="My Server"
 ```
 
 ## Used Ports
@@ -84,3 +86,4 @@ docker run \
 | TimeLimit          | integer  |           ✔️            | Match maximum playable time without overtime (0 means infinite time).             |  15 *(minutes)*   |
 | GoalScore          | integer  |           ✔️            | Goal score of player scores or team scores (0 means no goal score).               |        300        |
 | -LAN               |   bool   |           ❌            | Starts game server as local server                                                |  *(not passed)*   |
+| -SteamServerName   |  string  |           ❌            | Sets Steam server name                                                            |  *(not passed)*   |

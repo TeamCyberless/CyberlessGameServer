@@ -40,7 +40,8 @@ docker run \
   -p 27015:27015/tcp \
   -it teamcyberless/cyberless3onlineserver:latest \
   ./CyberlessIIIOnline/Binaries/Linux/CyberlessIIIOnlineServer-Linux-Shipping \
-  /Game/Maps/Training?ServerPassword=passwd?TimeLimit=20?GoalScore=330 -server -log -Messaging
+  /Game/Maps/Training?ServerPassword=passwd?TimeLimit=20?GoalScore=330 \
+  -server -log -Messaging -SteamServerName="My Server"
 ```
 
 ### Birim ile çalıştırma (İlk olarak birim oluşturmalısınız)
@@ -68,7 +69,8 @@ docker run \
   --mount source=<volume name>,target=/opt/CyberlessIIIOnlineServer \
   teamcyberless/cyberless3onlineserver:latest \
   ./CyberlessIIIOnline/Binaries/Linux/CyberlessIIIOnlineServer-Linux-Shipping \
-  /Game/Maps/Training?ServerPassword=passwd?TimeLimit=20?GoalScore=330 -server -log -Messaging
+  /Game/Maps/Training?ServerPassword=passwd?TimeLimit=20?GoalScore=330 \
+  -server -log -Messaging -SteamServerName="My Server"
 ```
 
 ## Kullanılan Portlar
@@ -84,3 +86,4 @@ docker run \
 | TimeLimit          |    integer    |           ✔️            | Ekstra süre hariç toplam oyun süresi (0 sınırsız  oyun süresi demektir).              |    15 *(dakika)*     |
 | GoalScore          |    integer    |           ✔️            | Takımların veya oyuncuların ulaşabileceği maksimum skor (0 değeri sınırsız demektir). |         300          |
 | -LAN               |     bool      |           ❌            | Oyun sunucusunu lokalde başlatır                                                      | *(değer verilmemiş)* |
+| -SteamServerName   |    string     |           ❌            | Steam sunucu adını tanımlar                                                           | *(değer verilmemiş)* |
