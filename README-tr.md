@@ -1,14 +1,14 @@
-[![Docker Çekimleri](https://img.shields.io/docker/pulls/teamcyberless/cyberless3onlineserver.svg)](https://hub.docker.com/r/teamcyberless/cyberless3onlineserver)
-[![Imaj Boyutu](https://img.shields.io/docker/image-size/teamcyberless/cyberless3onlineserver/latest.svg)](https://hub.docker.com/r/teamcyberless/cyberless3onlineserver)
+[![Docker Çekimleri](https://img.shields.io/docker/pulls/teamcyberless/cyberlessonlineserver.svg)](https://hub.docker.com/r/teamcyberless/cyberlessonlineserver)
+[![Imaj Boyutu](https://img.shields.io/docker/image-size/teamcyberless/cyberlessonlineserver/latest.svg)](https://hub.docker.com/r/teamcyberless/cyberlessonlineserver)
 
 | [English](https://github.com/TeamCyberless/CyberlessGameServer/blob/master/README.md) | [**Turkish**](https://github.com/TeamCyberless/CyberlessGameServer/blob/master/README-tr.md) |
 | ------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
 
-# Cyberless III: Online Oyun Sunucusu
+# Cyberless: Online Oyun Sunucusu
 
-Cyberless III: Online, Çok oyunculu TPS nişancı karakter-bazlı oyundur. Bu depo şu anlık sadece Linux sunucusu barındırmaktadır.
+Cyberless: Online, Çok oyunculu TPS nişancı karakter-bazlı oyundur. Bu depo şu anlık sadece Linux sunucusu barındırmaktadır.
 
-Cyberless III: Online hakkında detaylı bilgi için [burayı](https://store.steampowered.com/app/1175540/Cyberless_III_Online/) ziyaret edebilir veya bize [e-posta](mailto:teamcyberless@gmail.com) gönderebilirsiniz.
+Cyberless: Online hakkında detaylı bilgi için [burayı](https://store.steampowered.com/app/1175540/Cyberless_Online/) ziyaret edebilir veya bize [e-posta](mailto:teamcyberless@gmail.com) gönderebilirsiniz.
 
 ## Etiketler
 
@@ -18,7 +18,7 @@ Cyberless III: Online hakkında detaylı bilgi için [burayı](https://store.ste
 
 ### En son sürüm imajı çekmek için
 ```shell
-docker pull teamcyberless/cyberless3onlineserver:latest
+docker pull teamcyberless/cyberlessonlineserver:latest
 ```
 
 ### Test etmek için
@@ -28,7 +28,7 @@ docker run \
   -p 7777:7777/tcp \
   -p 27015:27015/udp \
   -p 27015:27015/tcp \
-  -it teamcyberless/cyberless3onlineserver:latest
+  -it teamcyberless/cyberlessonlineserver:latest
 ```
 
 ### Bazı oyun sunucusu parametreleri ile test etmek için
@@ -38,8 +38,8 @@ docker run \
   -p 7777:7777/tcp \
   -p 27015:27015/udp \
   -p 27015:27015/tcp \
-  -it teamcyberless/cyberless3onlineserver:latest \
-  ./CyberlessIIIOnline/Binaries/Linux/CyberlessIIIOnlineServer-Linux-Shipping \
+  -it teamcyberless/cyberlessonlineserver:latest \
+  ./CyberlessOnline/Binaries/Linux/CyberlessOnlineServer-Linux-Shipping \
   /Game/Maps/Training?ServerPassword=passwd?TimeLimit=20?GoalScore=330 \
   -server -log -Messaging -SteamServerName="My Server"
 ```
@@ -53,8 +53,8 @@ docker run \
   -p 27015:27015/tcp \
   -it \
   --user cyberless \
-  --mount source=<volume name>,target=/opt/CyberlessIIIOnlineServer \
-  teamcyberless/cyberless3onlineserver:latest
+  --mount source=<volume name>,target=/opt/CyberlessOnlineServer \
+  teamcyberless/cyberlessonlineserver:latest
 ```
 
 ### Hepsi bir arada
@@ -66,9 +66,9 @@ docker run \
   -p 27015:27015/tcp \
   -it \
   --user cyberless \
-  --mount source=<volume name>,target=/opt/CyberlessIIIOnlineServer \
-  teamcyberless/cyberless3onlineserver:latest \
-  ./CyberlessIIIOnline/Binaries/Linux/CyberlessIIIOnlineServer-Linux-Shipping \
+  --mount source=<volume name>,target=/opt/CyberlessOnlineServer \
+  teamcyberless/cyberlessonlineserver:latest \
+  ./CyberlessOnline/Binaries/Linux/CyberlessOnlineServer-Linux-Shipping \
   /Game/Maps/Training?ServerPassword=passwd?TimeLimit=20?GoalScore=330 \
   -server -log -Messaging -SteamServerName="My Server"
 ```
