@@ -1,14 +1,14 @@
-[![Docker Pulls](https://img.shields.io/docker/pulls/teamcyberless/cyberless3onlineserver.svg)](https://hub.docker.com/r/teamcyberless/cyberless3onlineserver)
-[![Image Size](https://img.shields.io/docker/image-size/teamcyberless/cyberless3onlineserver/latest.svg)](https://hub.docker.com/r/teamcyberless/cyberless3onlineserver)
+[![Docker Pulls](https://img.shields.io/docker/pulls/teamcyberless/cyberlessonlineserver.svg)](https://hub.docker.com/r/teamcyberless/cyberlessonlineserver)
+[![Image Size](https://img.shields.io/docker/image-size/teamcyberless/cyberlessonlineserver/latest.svg)](https://hub.docker.com/r/teamcyberless/cyberlessonlineserver)
 
 | [**English**](https://github.com/TeamCyberless/CyberlessGameServer/blob/master/README.md) | [Turkish](https://github.com/TeamCyberless/CyberlessGameServer/blob/master/README-tr.md) |
 | ----------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
 
-# Cyberless III: Online Game Server
+# Cyberless: Online Game Server
 
-Cyberless III: Online is online TPS shooter character-based game. This repository contains only Linux server for now.
+Cyberless: Online is online TPS shooter character-based game. This repository contains only Linux server for now.
 
-For detailed information about Cyberless III: Online, visit [here](https://store.steampowered.com/app/1175540/Cyberless_III_Online/) or send us [e-mail](mailto:teamcyberless@gmail.com).
+For detailed information about Cyberless: Online, visit [here](https://store.steampowered.com/app/1175540/Cyberless_Online/) or send us [e-mail](mailto:teamcyberless@gmail.com).
 
 ## Tags
 
@@ -18,7 +18,7 @@ For detailed information about Cyberless III: Online, visit [here](https://store
 
 ### Pull latest image
 ```shell
-docker pull teamcyberless/cyberless3onlineserver:latest
+docker pull teamcyberless/cyberlessonlineserver:latest
 ```
 
 ### Test interactively
@@ -28,7 +28,7 @@ docker run \
   -p 7777:7777/tcp \
   -p 27015:27015/udp \
   -p 27015:27015/tcp \
-  -it teamcyberless/cyberless3onlineserver:latest
+  -it teamcyberless/cyberlessonlineserver:latest
 ```
 
 ### Test with some game server parameters
@@ -38,8 +38,8 @@ docker run \
   -p 7777:7777/tcp \
   -p 27015:27015/udp \
   -p 27015:27015/tcp \
-  -it teamcyberless/cyberless3onlineserver:latest \
-  ./CyberlessIIIOnline/Binaries/Linux/CyberlessIIIOnlineServer-Linux-Shipping \
+  -it teamcyberless/cyberlessonlineserver:latest \
+  ./CyberlessOnline/Binaries/Linux/CyberlessOnlineServer-Linux-Shipping \
   /Game/Maps/Training?ServerPassword=passwd?TimeLimit=20?GoalScore=330 \
   -server -log -Messaging -SteamServerName="My Server"
 ```
@@ -53,8 +53,8 @@ docker run \
   -p 27015:27015/tcp \
   -it \
   --user cyberless \
-  --mount source=<volume name>,target=/opt/CyberlessIIIOnlineServer \
-  teamcyberless/cyberless3onlineserver:latest
+  --mount source=<volume name>,target=/opt/CyberlessOnlineServer \
+  teamcyberless/cyberlessonlineserver:latest
 ```
 
 ### All Together
@@ -66,9 +66,9 @@ docker run \
   -p 27015:27015/tcp \
   -it \
   --user cyberless \
-  --mount source=<volume name>,target=/opt/CyberlessIIIOnlineServer \
-  teamcyberless/cyberless3onlineserver:latest \
-  ./CyberlessIIIOnline/Binaries/Linux/CyberlessIIIOnlineServer-Linux-Shipping \
+  --mount source=<volume name>,target=/opt/CyberlessOnlineServer \
+  teamcyberless/cyberlessonlineserver:latest \
+  ./CyberlessOnline/Binaries/Linux/CyberlessOnlineServer-Linux-Shipping \
   /Game/Maps/Training?ServerPassword=passwd?TimeLimit=20?GoalScore=330 \
   -server -log -Messaging -SteamServerName="My Server"
 ```
